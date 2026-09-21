@@ -1,0 +1,84 @@
+/* selector {
+    propiedad: valor;
+}
+*/
+
+/* 1rem = 16px */
+
+
+/* Importamos la tipografía desde Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Estilos generales de la página */
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #F5E9EC;
+}
+
+
+/* Título principal */
+
+h1 {
+    color: #8E5A68;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/* Títulos secundarios */
+
+h2 {
+    color: #8E5A68;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+/* Títulos de los productos */
+
+h3 {
+    color: #8E5A68;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+/* Texto de la página */
+
+p {
+    color: #333333;
+}
+
+
+/* Estilos de la barra de navegación */
+
+.nav-ul li {
+    list-style: none;
+}
+
+.nav-ul li a {
+    color: #8E5A68;
+    text-decoration: none;
+}
+
+
+/* Tamaño de las imágenes */
+
+figure img {
+    width: 500px;
+}
+
+
+/* Estilos del pie de página */
+
+footer {
+    background-color: #D8A7B1;
+}
+
+.p-footer {
+    color: #FFFFFF;
+}
