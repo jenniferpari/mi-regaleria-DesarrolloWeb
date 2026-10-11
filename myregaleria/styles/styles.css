@@ -19,6 +19,7 @@ body {
 }
 
 
+
 /* Título principal */
 
 h1 {
@@ -51,6 +52,14 @@ h3 {
 
 p {
     color: #333333;
+}
+
+/* Tamaños para el logo */
+
+.logo {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
 }
 
 
