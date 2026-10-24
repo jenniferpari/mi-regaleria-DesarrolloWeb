@@ -11,14 +11,15 @@
 <body>
 
     <header>
-          <a href="../index.html"> <img src="../assets/img/logo.jpg" alt="Logo de Mi Regalería" class="logo"> </a>
+        <a href="../index.html"> <img src="../assets/img/logo-miRegaleria3.png" alt="Logo de Mi Regalería" class="logo">
+        </a>
         <nav>
             <ul class="nav-ul">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -32,30 +33,50 @@
         </section>
 
         <!-- Sección de formulario con accesibilidad -->
-        <section id="contacto">
-            <h2>Escríbenos</h2>
-            <form action="#" method="POST">
-                <p>
-                    <label for="nombre">Nombre:</label><br>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required>
-                </p>
-                <p>
-                    <label for="celular">Celular:</label><br>
-                    <input type="tel" id="celular" name="celular" placeholder="Ej: 3581234567" required>
-                </p>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
 
-        <section>
-            <h2>Atención al cliente</h2>
-            <figure>
-                <img src="../assets/img/atencionAlcliente.png"
-                    alt="Mostrador de atención al cliente en Mi Regalería Río Cuarto con empaques listos para envío">
-                <figcaption>Atención personalizada en nuestro local de Río Cuarto y envíos a todo el país.</figcaption>
-            </figure>
-        </section>
+        <div class="contacto-grid">
 
+            <!-- Formulario de contacto -->
+            <section class="contacto-formulario" id="contacto">
+
+                <h2>Escribinos</h2>
+
+                <form action="#" method="POST">
+
+                    <p>
+                        <label for="nombre">Nombre:</label><br>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required>
+                    </p>
+
+                    <p>
+                        <label for="celular">Celular:</label><br>
+                        <input type="tel" id="celular" name="celular" placeholder="Ej: 3581234567" required>
+                    </p>
+
+                    <button type="submit">Enviar</button>
+
+                </form>
+
+            </section>
+
+            <!-- Atención al cliente -->
+            <section class="contacto-atencion">
+
+                <h2>Atención al cliente</h2>
+
+                <figure>
+                    <img src="../assets/img/atencioAlcliente.png"
+                        alt="Mostrador de atención al cliente de Mi Regalería">
+
+                    <figcaption>
+                        Atención personalizada en nuestro local de Río Cuarto
+                        y envíos a todo el país.
+                    </figcaption>
+                </figure>
+
+            </section>
+
+        </div>
     </main>
 
     <footer>
@@ -69,6 +90,7 @@
         </ul>
 
     </footer>
+
 </body>
 
 </html>

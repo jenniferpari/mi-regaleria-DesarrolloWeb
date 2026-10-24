@@ -1,4 +1,3 @@
-
 /* ===== GOOGLE FONTS ===== */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
@@ -19,12 +18,20 @@
 body {
     font-family: "Montserrat", sans-serif;
     background-color: #F5E9EC;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
 }
 
 /* Título principal */
 h1 {
     color: #8E5A68;
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 700;
     text-align: center;
 }
@@ -32,14 +39,14 @@ h1 {
 /* Títulos secundarios */
 h2 {
     color: #8E5A68;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
 /* Títulos de los productos */
 h3 {
     color: #8E5A68;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 
@@ -51,30 +58,36 @@ p {
 
 /* ===== HEADER Y NAVEGACIÓN ===== */
 
-/* Organizamos el logo y el menú en una fila */
+/* Versión celular: logo arriba y menú debajo */
 header {
+    grid-area: header;
+
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 20px;
+
     padding: 20px;
 }
 
 /* Tamaño del logo */
 .logo {
-    width: 100px;
+    width: 280px;
     height: auto;
-    object-fit: contain;
 }
 
 /* Organizamos los enlaces del menú */
 .nav-ul {
     display: flex;
-    gap: 20px;
-    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    gap: 15px;
+
+    list-style: none;
 }
 
-/* Quitamos las viñetas de las listas de navegación */
+/* Quitamos las viñetas */
 .nav-ul li {
     list-style: none;
 }
@@ -88,12 +101,12 @@ header {
 
 /* ===== CONTENIDO PRINCIPAL ===== */
 
-/* Espacio interno del contenido */
 main {
+    grid-area: main;
     padding: 20px;
 }
 
-/* Separación entre las secciones */
+/* Separación entre secciones */
 section {
     margin-bottom: 30px;
 }
@@ -101,56 +114,74 @@ section {
 
 /* ===== PÁGINA DE INICIO ===== */
 
-/* Sección de bienvenida */
+/* Grid principal de Inicio: Mobile-First */
+.inicio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+        "bienvenida"
+        "beneficios"
+        "local";
+
+    gap: 20px;
+}
+
+
+/* ===== SECCIÓN DE BIENVENIDA ===== */
+
 .bienvenida {
+    grid-area: bienvenida;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    padding: 20px;
+    align-items: center;
+
+}
+
+.bienvenida-texto {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
-    padding: 20px;
 }
 
-/* Sección de beneficios */
+.bienvenida h1 {
+    font-size: 2.5rem;
+}
+
+
+.bienvenida figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== SECCIÓN DE BENEFICIOS ===== */
+
 .beneficios {
+    grid-area: beneficios;
+
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+
     padding: 20px;
 }
 
-/* Organizamos los elementos de la lista */
-.beneficios ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-left: 20px;
-}
-
-/* Sección de nuestro local */
-.local {
-    display: flex;
-    flex-direction: column;
+/* Contenedor de las tarjetas */
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
-    padding: 20px;
-    align-items: center;
 }
 
-
-/* ===== PÁGINA DE PRODUCTOS ===== */
-
-/* Organizamos las tarjetas una al lado de la otra */
-.productos {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* Estilos de cada tarjeta de producto */
-.productos article {
-    padding: 20px;
+/* Cada tarjeta */
+.beneficios-grid article {
     border: 1px solid #8E5A68;
-    flex: 1 1 300px;
+    padding: 30px;
 
     display: flex;
     flex-direction: column;
@@ -158,9 +189,77 @@ section {
 }
 
 
+/* ===== SECCIÓN DE NUESTRO LOCAL ===== */
+
+.local {
+    grid-area: local;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    padding: 20px;
+}
+
+/* Contenedor de imagen y texto */
+.local-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Información del local */
+.local-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+
+}
+
+.local h2 {
+    text-align: center;
+}
+
+/* Imagen del local */
+
+.local figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== PÁGINA DE PRODUCTOS ===== */
+
+/* Versión celular: una sola columna */
+.productos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* Estilos de cada tarjeta */
+.productos article {
+    padding: 20px;
+    border: 1px solid #8E5A68;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Separación entre el título y las tarjetas */
+h2 {
+    margin-bottom: 30px;
+}
+
 /* ===== IMÁGENES ===== */
 
-/* Ajustamos el tamaño de las imágenes */
+/* Ajustamos las imágenes al espacio disponible */
 figure img {
     width: 100%;
     max-width: 350px;
@@ -169,17 +268,232 @@ figure img {
 
 /* ===== FOOTER ===== */
 
-/* Organizamos el contenido del pie de página */
 footer {
+    grid-area: footer;
+
     background-color: #D8A7B1;
     padding: 20px;
 
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
+    text-align: center;
 }
 
 /* Color de los textos del footer */
 .p-footer {
     color: #2c2525;
+}
+
+
+
+/* ===== PÁGINA NOSOTROS ===== */
+
+.historia {
+    padding: 20px;
+}
+
+.historia h2 {
+    text-align: center;
+}
+
+.historia-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.historia-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.historia figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== PÁGINA FAQ ===== */
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.faq-grid article {
+    border: 1px solid #8E5A68;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-grid h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+/* ===== ATENCIÓN AL CLIENTE - FAQ ===== */
+
+.faq-atencion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.faq-atencion h2 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.faq-atencion figure {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.faq-atencion figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== PÁGINA CONTACTO ===== */
+
+/* Contenedor principal */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Secciones de contacto */
+.contacto-formulario,
+.contacto-atencion {
+    padding: 20px;
+    border: 1px solid #8E5A68;
+}
+
+/* Títulos */
+.contacto-formulario h2,
+.contacto-atencion h2 {
+    text-align: center;
+}
+
+/* Formulario */
+.contacto-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Campos */
+.contacto-formulario input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8E5A68;
+}
+
+/* Botón */
+.contacto-formulario button {
+    padding: 10px;
+    background-color: #D8A7B1;
+    color: #333333;
+    border: 1px solid #8E5A68;
+}
+
+/* Imagen */
+.contacto-atencion figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ===== MEDIA QUERY: ESCRITORIO ===== */
+
+@media (min-width: 1024px) {
+
+    /* Header: logo y menú en una fila */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-ul {
+        gap: 20px;
+    }
+
+    /* Página de Inicio */
+    .inicio-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "bienvenida"
+            "beneficios"
+            "local";
+    }
+
+    /* Bienvenida: texto e imagen en dos columnas */
+    .bienvenida {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* Página de Productos: 4 columnas */
+    .productos {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+
+
+    /* Títulos más grandes en escritorio */
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Beneficios: tres columnas */
+    .beneficios-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Local: imagen y texto en dos columnas */
+    .local-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Página Nosotros: texto e imagen en dos columnas */
+    .historia-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* FAQ: dos columnas en escritorio */
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contacto: dos columnas en escritorio */
+    .contacto-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.local-texto h3 {
+    text-align: center;
 }
