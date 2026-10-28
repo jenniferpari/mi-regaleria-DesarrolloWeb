@@ -77,6 +77,7 @@ header {
 }
 
 /* Organizamos los enlaces del menú */
+
 .nav-ul {
     display: flex;
     flex-wrap: wrap;
@@ -87,10 +88,6 @@ header {
     list-style: none;
 }
 
-/* Quitamos las viñetas */
-.nav-ul li {
-    list-style: none;
-}
 
 /* Estilos de los enlaces */
 .nav-ul li a {
@@ -432,14 +429,13 @@ footer {
         gap: 20px;
     }
 
-    /* Página de Inicio */
+    /* Página de Inicio: reorganización de áreas */
     .inicio-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
 
         grid-template-areas:
-            "bienvenida"
-            "beneficios"
-            "local";
+            "bienvenida bienvenida"
+            "beneficios local";
     }
 
     /* Bienvenida: texto e imagen en dos columnas */
@@ -466,16 +462,6 @@ footer {
 
     h3 {
         font-size: 1.5rem;
-    }
-
-    /* Beneficios: tres columnas */
-    .beneficios-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Local: imagen y texto en dos columnas */
-    .local-grid {
-        grid-template-columns: 1fr 1fr;
     }
 
     /* Página Nosotros: texto e imagen en dos columnas */
