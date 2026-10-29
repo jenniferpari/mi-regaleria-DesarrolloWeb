@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css">
 
     <title>Productos | Mi Regalería</title>
@@ -12,19 +15,52 @@
 <body>
 
     <header>
-        <a href="../index.html"> <img src="../assets/img/logo-miRegaleria3.png" alt="Logo de Mi Regalería" class="logo">
-        </a>
-        <nav>
-            <ul class="nav-ul">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg bg-nav-mio">
+            <div class="container-fluid">
+
+                <!-- Logo -->
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/img/logo-miRegaleria3.png" alt="Logo de Mi Regalería" class="logo">
+                </a>
+
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú de navegación -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="productos.html">Productos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQ</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
         </nav>
     </header>
-
     <main>
 
         <section>
@@ -38,139 +74,193 @@
 
             <div class="productos">
 
-
                 <!-- Producto 1 -->
-                <article>
-                    <h3>Agenda</h3>
+                <article class="card">
+
                     <figure>
-                        <img src="../assets/img/producto_agenda.png"
+                        <img src="../assets/img/producto_agenda.png" class="card-img-top"
                             alt="Agenda rosa pastel con espiral y detalle de corazón">
+
                         <figcaption>Organizá tus días con estilo.</figcaption>
                     </figure>
-                    <p>
-                        Agenda de diseño delicado en tonos pastel, ideal para organizar
-                        tus actividades, anotar recordatorios y planificar tus días.
-                    </p>
+
+                    <div class="card-body">
+                        <h3 class="card-title">Agenda</h3>
+                        <p class="card-text">
+                            Agenda de diseño delicado en tonos pastel, ideal para organizar
+                            tus actividades, anotar recordatorios y planificar tus días.
+                        </p>
+                    </div>
+
                 </article>
 
                 <!-- Producto 2 -->
-                <article>
-                    <h3>Aromatizador</h3>
+                <article class="card">
+
                     <figure>
-                        <img src="../assets/img/producto_aromatizador.png"
+                        <img src="../assets/img/producto_aromatizador.png" class="card-img-top"
                             alt="Aromatizador de ambiente con varillas de madera">
+
                         <figcaption>Un aroma especial para cada rincón.</figcaption>
                     </figure>
-                    <p>
-                        Aromatizador de ambiente con varillas difusoras, ideal para
-                        perfumar tus espacios y crear una sensación de frescura y bienestar.
-                    </p>
+
+                    <div class="card-body">
+                        <h3 class="card-title">Aromatizador</h3>
+                        <p class="card-text">
+                            Aromatizador de ambiente con varillas difusoras, ideal para
+                            perfumar tus espacios y crear una sensación de frescura y bienestar.
+                        </p>
+                    </div>
+
                 </article>
 
                 <!-- Producto 3 -->
-                <article>
-                    <h3>Bolsa de tela</h3>
+                <article class="card">
+
                     <figure>
-                        <img src="../assets/img/producto_bolsa_tela.png"
+                        <img src="../assets/img/producto_bolsa_tela.png" class="card-img-top"
                             alt="Bolsa de tela color beige con diseño floral">
+
                         <figcaption>Práctica, cómoda y con mucho estilo.</figcaption>
                     </figure>
-                    <p>
-                        Bolsa de tela reutilizable con un delicado diseño floral.
-                        Ideal para llevar tus pertenencias, realizar compras
-                        o complementar tus looks diarios.
-                    </p>
+
+                    <div class="card-body">
+                        <h3 class="card-title">Bolsa de tela</h3>
+                        <p class="card-text">
+                            Bolsa de tela reutilizable con un delicado diseño floral.
+                            Ideal para llevar tus pertenencias, realizar compras
+                            o complementar tus looks diarios.
+                        </p>
+                    </div>
+
                 </article>
 
                 <!-- Producto 4 -->
-                <article>
-                    <h3>Caja de regalo</h3>
+                <article class="card">
+
                     <figure>
-                        <img src="../assets/img/producto_caja_regalo.png"
+                        <img src="../assets/img/producto_caja_regalo.png" class="card-img-top"
                             alt="Caja de regalo con taza, vela y accesorios">
+
                         <figcaption>Un detalle especial para sorprender.</figcaption>
                     </figure>
-                    <p>
-                        Caja de regalo con una selección de productos pensados
-                        para sorprender a alguien especial. Ideal para cumpleaños,
-                        celebraciones o simplemente demostrar cariño.
-                    </p>
+
+                    <div class="card-body">
+                        <h3 class="card-title">Caja de regalo</h3>
+                        <p class="card-text">
+                            Caja de regalo con una selección de productos pensados
+                            para sorprender a alguien especial. Ideal para cumpleaños,
+                            celebraciones o simplemente demostrar cariño.
+                        </p>
+                    </div>
+
                 </article>
 
                 <!-- Producto 5 -->
-                <article>
-                    <h3>Cuadernos</h3>
+                <article class="card">
+
                     <figure>
-                        <img src="../assets/img/producto_cuadernos.png"
+                        <img src="../assets/img/producto_cuadernos.png" class="card-img-top"
                             alt="Cuadernos con espiral y diseños de corazones en tonos pastel">
+
                         <figcaption>Un espacio para todas tus ideas.</figcaption>
                     </figure>
-                    <p>
-                        Cuadernos con diseños delicados y modernos, ideales para
-                        tomar apuntes, escribir pensamientos o dejar volar
-                        tu creatividad en cualquier momento.
-                    </p>
+
+                    <div class="card-body">
+                        <h3 class="card-title">Cuadernos</h3>
+                        <p class="card-text">
+                            Cuadernos con diseños delicados y modernos, ideales para
+                            tomar apuntes, escribir pensamientos o dejar volar
+                            tu creatividad en cualquier momento.
+                        </p>
+                    </div>
+
                 </article>
 
                 <!-- Producto 6 -->
-                <article>
-                    <h3>Llaveros</h3>
+                <article class="card">
+
                     <figure>
-                        <img src="../assets/img/producto_llaveros.png"
+                        <img src="../assets/img/producto_llaveros.png" class="card-img-top"
                             alt="Llaveros decorativos con forma de corazón y margarita">
+
                         <figcaption>Pequeños detalles que enamoran.</figcaption>
                     </figure>
-                    <p>
-                        Llaveros decorativos con diseños originales y delicados.
-                        Ideales para personalizar tus llaves, decorar tu mochila
-                        o regalar un pequeño detalle lleno de encanto.
-                    </p>
+
+                    <div class="card-body">
+                        <h3 class="card-title">Llaveros</h3>
+                        <p class="card-text">
+                            Llaveros decorativos con diseños originales y delicados.
+                            Ideales para personalizar tus llaves, decorar tu mochila
+                            o regalar un pequeño detalle lleno de encanto.
+                        </p>
+                    </div>
+
                 </article>
 
                 <!-- Producto 7 -->
-                <article>
-                    <h3>Maceta decorativa</h3>
+                <article class="card">
+
                     <figure>
-                        <img src="../assets/img/producto_maceta.png"
+                        <img src="../assets/img/producto_maceta.png" class="card-img-top"
                             alt="Maceta de cerámica blanca con una planta suculenta">
+
                         <figcaption>Un toque natural para tus espacios.</figcaption>
                     </figure>
-                    <p>
-                        Maceta decorativa de cerámica con un diseño moderno y delicado.
-                        Ideal para decorar escritorios, habitaciones o cualquier
-                        rincón de tu hogar con un toque de naturaleza.
-                    </p>
+
+                    <div class="card-body">
+                        <h3 class="card-title">Maceta decorativa</h3>
+                        <p class="card-text">
+                            Maceta decorativa de cerámica con un diseño moderno y delicado.
+                            Ideal para decorar escritorios, habitaciones o cualquier
+                            rincón de tu hogar con un toque de naturaleza.
+                        </p>
+                    </div>
+
                 </article>
 
                 <!-- Producto 8 -->
-                <article>
-                    <h3>Taza de cerámica</h3>
+                <article class="card">
+
                     <figure>
-                        <img src="../assets/img/producto_taza.png"
+                        <img src="../assets/img/producto_taza.png" class="card-img-top"
                             alt="Taza de cerámica blanca con diseño de corazón rosa">
+
                         <figcaption>Tu momento favorito en una taza.</figcaption>
                     </figure>
-                    <p>
-                        Taza de cerámica con un delicado diseño de corazón.
-                        Perfecta para disfrutar café, té o tu bebida favorita.
-                        Una excelente opción para regalar o darte un gusto.
-                    </p>
+
+                    <div class="card-body">
+                        <h3 class="card-title">Taza de cerámica</h3>
+                        <p class="card-text">
+                            Taza de cerámica con un delicado diseño de corazón.
+                            Perfecta para disfrutar café, té o tu bebida favorita.
+                            Una excelente opción para regalar o darte un gusto.
+                        </p>
+                    </div>
+
                 </article>
 
                 <!-- Producto 9 -->
-                <article>
-                    <h3>Vela aromática</h3>
+                <article class="card">
+
                     <figure>
-                        <img src="../assets/img/producto_vela.png"
+                        <img src="../assets/img/producto_vela.png" class="card-img-top"
                             alt="Vela aromática en recipiente de vidrio con etiqueta decorativa">
+
                         <figcaption>Calidez y tranquilidad en cada momento.</figcaption>
                     </figure>
-                    <p>
-                        Vela aromática decorativa, ideal para crear ambientes
-                        cálidos y relajantes. Perfecta para acompañar momentos
-                        de descanso o regalar a alguien especial.
-                    </p>
+
+                    <div class="card-body">
+                        <h3 class="card-title">Vela aromática</h3>
+                        <p class="card-text">
+                            Vela aromática decorativa, ideal para crear ambientes
+                            cálidos y relajantes. Perfecta para acompañar momentos
+                            de descanso o regalar a alguien especial.
+                        </p>
+                    </div>
+
                 </article>
+
             </div>
         </section>
 
@@ -187,6 +277,10 @@
         </ul>
 
     </footer>
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

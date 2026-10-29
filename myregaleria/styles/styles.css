@@ -5,7 +5,6 @@
 
 /* ===== RESET DEL BOX MODEL ===== */
 
-/* Eliminamos los márgenes y espacios predeterminados */
 * {
     margin: 0;
     padding: 0;
@@ -21,11 +20,13 @@ body {
 
     display: grid;
     grid-template-columns: 1fr;
-
     grid-template-areas:
         "header"
         "main"
         "footer";
+
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }
 
 /* Título principal */
@@ -41,6 +42,7 @@ h2 {
     color: #8E5A68;
     font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 30px;
 }
 
 /* Títulos de los productos */
@@ -58,26 +60,81 @@ p {
 
 /* ===== HEADER Y NAVEGACIÓN ===== */
 
-/* Versión celular: logo arriba y menú debajo */
 header {
     grid-area: header;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-
-    padding: 20px;
 }
 
-/* Tamaño del logo */
+/* Tamaño del logo en celulares */
 .logo {
-    width: 280px;
+    width: 180px;
     height: auto;
 }
 
-/* Organizamos los enlaces del menú */
 
+/* ===== NAVBAR BOOTSTRAP ===== */
+
+/* Color de fondo personalizado */
+.bg-nav-mio {
+    background-color: #F5E9EC;
+}
+
+/* Enlaces del menú */
+.navbar .nav-link {
+    color: #8E5A68;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Al pasar el mouse */
+.navbar .nav-link:hover {
+    color: #D8A7B1;
+}
+
+/* Al seleccionar con el teclado */
+.navbar .nav-link:focus {
+    color: #8E5A68;
+    outline: 2px solid #8E5A68;
+    outline-offset: 4px;
+}
+
+/* Enlace de la página actual */
+.navbar .nav-link.active {
+    color: #8E5A68;
+    font-weight: 600;
+}
+
+/* Al presionar cualquier enlace del navbar */
+.navbar .nav-link:active,
+.navbar .nav-link.active:active {
+    color: #6F4552;
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+    border-color: #8E5A68;
+    transition: background-color 0.3s ease;
+}
+
+/* Al pasar el mouse */
+.navbar-toggler:hover {
+    background-color: #F0DDE3;
+}
+
+/* Al seleccionar con el teclado */
+.navbar-toggler:focus-visible {
+    outline: 2px solid #8E5A68;
+    outline-offset: 3px;
+}
+
+/* Al presionar */
+.navbar-toggler:active {
+    background-color: #D8A7B1;
+}
+
+
+/* ===== ENLACES DEL FOOTER ===== */
+
+/* Organización de las redes sociales */
 .nav-ul {
     display: flex;
     flex-wrap: wrap;
@@ -86,13 +143,31 @@ header {
     gap: 15px;
 
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
-
 
 /* Estilos de los enlaces */
 .nav-ul li a {
     color: #8E5A68;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Al pasar el mouse */
+.nav-ul li a:hover {
+    color: #F5E9EC;
+}
+
+/* Al seleccionar con el teclado */
+.nav-ul li a:focus {
+    outline: 2px solid #8E5A68;
+    outline-offset: 4px;
+}
+
+/* Al presionar */
+.nav-ul li a:active {
+    color: #FFFFFF;
 }
 
 
@@ -111,50 +186,74 @@ section {
 
 /* ===== PÁGINA DE INICIO ===== */
 
-/* Grid principal de Inicio: Mobile-First */
+/* Grid principal: Mobile-First */
 .inicio-grid {
     display: grid;
     grid-template-columns: 1fr;
 
     grid-template-areas:
-        "bienvenida"
+        "banner"
         "beneficios"
         "local";
 
     gap: 20px;
+    padding: 0;
 }
 
 
-/* ===== SECCIÓN DE BIENVENIDA ===== */
+/* ===== CARRUSEL PRINCIPAL ===== */
 
-.bienvenida {
-    grid-area: bienvenida;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-
-    padding: 20px;
-    align-items: center;
-
+/* Sección del banner */
+.banner-principal {
+    grid-area: banner;
+    margin-bottom: 30px;
 }
 
-.bienvenida-texto {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.bienvenida h1 {
-    font-size: 2.5rem;
-}
-
-
-.bienvenida figure img {
+/* Contenedor del carrusel */
+#carouselPrincipal {
     width: 100%;
-    max-width: 100%;
+}
+
+/* Imágenes del carrusel */
+#carouselPrincipal .carousel-item img {
+    display: block;
+    width: 100%;
     height: auto;
 }
+
+/* Tamaño de los botones anterior y siguiente */
+#carouselPrincipal .carousel-control-prev,
+#carouselPrincipal .carousel-control-next {
+    width: 7%;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilo de las flechas */
+#carouselPrincipal .carousel-control-prev-icon,
+#carouselPrincipal .carousel-control-next-icon {
+    background-color: #8E5A68;
+    border-radius: 5px;
+}
+
+/* Al pasar el mouse */
+#carouselPrincipal .carousel-control-prev:hover,
+#carouselPrincipal .carousel-control-next:hover {
+    opacity: 0.7;
+}
+
+/* Al seleccionar con el teclado */
+#carouselPrincipal .carousel-control-prev:focus-visible,
+#carouselPrincipal .carousel-control-next:focus-visible {
+    outline: 2px solid #8E5A68;
+    outline-offset: 2px;
+}
+
+/* Al presionar */
+#carouselPrincipal .carousel-control-prev:active,
+#carouselPrincipal .carousel-control-next:active {
+    opacity: 0.5;
+}
+
 
 /* ===== SECCIÓN DE BENEFICIOS ===== */
 
@@ -175,14 +274,27 @@ section {
     gap: 20px;
 }
 
-/* Cada tarjeta */
-.beneficios-grid article {
+/* Cards de Bootstrap personalizadas */
+.beneficios-grid .card {
     border: 1px solid #8E5A68;
-    padding: 30px;
+    background-color: #F0DDE3;
 
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.beneficios-grid .card:hover {
+    background-color: #FFFFFF;
+}
+
+/* Títulos de las cards */
+.beneficios-grid .card-title {
+    color: #8E5A68;
+}
+
+/* Texto de las cards */
+.beneficios-grid .card-text {
+    color: #333333;
 }
 
 
@@ -212,7 +324,6 @@ section {
     flex-direction: column;
     gap: 20px;
     text-align: left;
-
 }
 
 .local h2 {
@@ -220,12 +331,12 @@ section {
 }
 
 /* Imagen del local */
-
 .local figure img {
     width: 100%;
     max-width: 100%;
     height: auto;
 }
+
 
 /* ===== PÁGINA DE PRODUCTOS ===== */
 
@@ -239,24 +350,65 @@ section {
     margin: 0 auto;
 }
 
-/* Estilos de cada tarjeta */
-.productos article {
-    padding: 20px;
+
+/* ===== CARDS DE PRODUCTOS ===== */
+
+.productos .card {
     border: 1px solid #8E5A68;
+    background-color: #F5E9EC;
 
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    transition: background-color 0.3s ease;
 }
 
-/* Separación entre el título y las tarjetas */
-h2 {
-    margin-bottom: 30px;
+/* Fondo alternado en las tarjetas pares */
+.productos .card:nth-child(even) {
+    background-color: #F0DDE3;
 }
 
-/* ===== IMÁGENES ===== */
+/* Efecto al pasar el mouse */
+.productos .card:hover {
+    background-color: #FFFFFF;
+}
 
-/* Ajustamos las imágenes al espacio disponible */
+/* Imágenes de las cards */
+.productos .card-img-top {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+/* Espacio debajo de las imágenes */
+.productos .card figure {
+    margin-bottom: 0;
+}
+
+/* Descripción debajo de la imagen */
+.productos .card figcaption {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Cuerpo de las cards */
+.productos .card-body {
+    padding: 20px;
+}
+
+/* Títulos de las cards */
+.productos .card-title {
+    color: #8E5A68;
+}
+
+/* Textos de las cards */
+.productos .card-text {
+    color: #333333;
+}
+
+
+/* ===== IMÁGENES GENERALES ===== */
+
 figure img {
     width: 100%;
     max-width: 350px;
@@ -282,7 +434,6 @@ footer {
 .p-footer {
     color: #2c2525;
 }
-
 
 
 /* ===== PÁGINA NOSOTROS ===== */
@@ -314,6 +465,7 @@ footer {
     height: auto;
 }
 
+
 /* ===== PÁGINA FAQ ===== */
 
 .faq-grid {
@@ -335,6 +487,7 @@ footer {
     font-size: 1.5rem;
     margin-bottom: 0;
 }
+
 
 /* ===== ATENCIÓN AL CLIENTE - FAQ ===== */
 
@@ -362,6 +515,7 @@ footer {
     max-width: 100%;
     height: auto;
 }
+
 
 /* ===== PÁGINA CONTACTO ===== */
 
@@ -392,22 +546,58 @@ footer {
     gap: 20px;
 }
 
-/* Campos */
+
+/* ===== CAMPOS DEL FORMULARIO ===== */
+
 .contacto-formulario input {
     width: 100%;
     padding: 10px;
     border: 1px solid #8E5A68;
+
+    background-color: #FFFFFF;
+    transition: background-color 0.3s ease;
 }
 
-/* Botón */
+/* Campo seleccionado */
+.contacto-formulario input:focus {
+    background-color: #FFF3F6;
+    outline: 2px solid #8E5A68;
+    outline-offset: 2px;
+}
+
+
+/* ===== BOTÓN DEL FORMULARIO ===== */
+
 .contacto-formulario button {
     padding: 10px;
     background-color: #D8A7B1;
     color: #333333;
     border: 1px solid #8E5A68;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Imagen */
+/* Al pasar el mouse */
+.contacto-formulario button:hover {
+    background-color: #8E5A68;
+    color: #FFFFFF;
+}
+
+/* Al seleccionar con el teclado */
+.contacto-formulario button:focus {
+    outline: 2px solid #8E5A68;
+    outline-offset: 4px;
+}
+
+/* Al presionar el botón */
+.contacto-formulario button:active {
+    background-color: #6F4552;
+}
+
+
+/* ===== IMAGEN DE CONTACTO ===== */
+
 .contacto-atencion figure img {
     width: 100%;
     max-width: 100%;
@@ -419,37 +609,29 @@ footer {
 
 @media (min-width: 1024px) {
 
-    /* Header: logo y menú en una fila */
-    header {
-        flex-direction: row;
-        justify-content: space-between;
+    /* Logo más grande en escritorio */
+    .logo {
+        width: 280px;
     }
 
+    /* Separación de enlaces del footer */
     .nav-ul {
         gap: 20px;
     }
 
-    /* Página de Inicio: reorganización de áreas */
+    /* Inicio: reorganización de áreas */
     .inicio-grid {
         grid-template-columns: 1fr 1fr;
 
         grid-template-areas:
-            "bienvenida bienvenida"
+            "banner banner"
             "beneficios local";
     }
 
-    /* Bienvenida: texto e imagen en dos columnas */
-    .bienvenida {
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-    /* Página de Productos: 4 columnas */
+    /* Productos: tres columnas */
     .productos {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-
-
 
     /* Títulos más grandes en escritorio */
     h1 {
@@ -464,21 +646,25 @@ footer {
         font-size: 1.5rem;
     }
 
-    /* Página Nosotros: texto e imagen en dos columnas */
+    /* Nosotros: texto e imagen en dos columnas */
     .historia-grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* FAQ: dos columnas en escritorio */
+    /* FAQ: dos columnas */
     .faq-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Contacto: dos columnas en escritorio */
+    /* Contacto: dos columnas */
     .contacto-grid {
         grid-template-columns: 1fr 1fr;
     }
+
 }
+
+
+/* ===== OTROS AJUSTES ===== */
 
 .local-texto h3 {
     text-align: center;

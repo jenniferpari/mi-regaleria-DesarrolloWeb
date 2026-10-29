@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Mi Regaleria</title>
@@ -12,49 +16,99 @@
 <body>
 
     <header>
-        <a href="./index.html">
-            <img src="./assets/img/logo-miRegaleria3.png" alt="Logo de Mi Regalería" class="logo">
-        </a>
-        <nav>
-            <ul class="nav-ul">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="pages/nosotros.html">Nosotros</a></li>
-                <li><a href="pages/productos.html">Productos</a></li>
-                <li><a href="pages/faq.html">FAQ</a></li>
-                <li><a href="pages/contacto.html">Contacto</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg bg-nav-mio">
+            <div class="container-fluid">
+
+                <!-- Logo -->
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./assets/img/logo-miRegaleria3.png" alt="Logo de Mi Regalería" class="logo">
+                </a>
+
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú de navegación -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/nosotros.html">Nosotros</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/productos.html">Productos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/faq.html">FAQ</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/contacto.html">Contacto</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
         </nav>
     </header>
-
     <main class="inicio-grid">
 
-        <!-- Sección de bienvenida -->
 
-        <section class="bienvenida">
+        <!-- Carrusel principal -->
+        <section class="banner-principal">
 
-            <div class="bienvenida-texto">
-                <h1>Un detalle especial para cada ocasión</h1>
+            <div id="carouselPrincipal" class="carousel slide" data-bs-ride="carousel">
 
-                <p>
-                    ¡Bienvenidos a Mi Regalería! Somos una regalería de
-                    Río Cuarto, Córdoba, con 4 años de trayectoria.
-                </p>
+                <div class="carousel-inner">
 
-                <p>
-                    Encontrá regalos originales, accesorios y detalles
-                    pensados para sorprender. Comprá online y recibí
-                    tu pedido en cualquier parte del país.
-                </p>
+                    <!-- Primera imagen -->
+                    <div class="carousel-item active">
+                        <img src="./assets/img/banner_momentos_especiales.png" class="d-block w-100"
+                            alt="Regalos originales para sorprender en Mi Regalería">
+                    </div>
+
+                    <!-- Segunda imagen -->
+                    <div class="carousel-item">
+                        <img src="./assets/img/banner_regalos_que_emocionan.png" class="d-block w-100"
+                            alt="Ideas de regalos para ocasiones especiales">
+                    </div>
+
+                </div>
+
+                <!-- Botón anterior -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselPrincipal"
+                    data-bs-slide="prev">
+
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+
+                <!-- Botón siguiente -->
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselPrincipal"
+                    data-bs-slide="next">
+
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+
             </div>
-
-            <figure>
-                <img src="./assets/img/imagen-bienvenida.png" alt="Selección de regalos y accesorios de Mi Regalería">
-            </figure>
 
         </section>
 
         <!-- Sección de beneficios -->
-
         <section class="beneficios">
 
             <h2>¿Qué ofrecemos?</h2>
@@ -62,30 +116,36 @@
             <div class="beneficios-grid">
 
                 <!-- Beneficio 1 -->
-                <article>
-                    <h3>Regalos especiales</h3>
-                    <p>
-                        Encontrá una variedad de productos y detalles
-                        originales para sorprender en cada ocasión.
-                    </p>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Regalos especiales</h3>
+                        <p class="card-text">
+                            Encontrá una variedad de productos y detalles
+                            originales para sorprender en cada ocasión.
+                        </p>
+                    </div>
                 </article>
 
                 <!-- Beneficio 2 -->
-                <article>
-                    <h3>Envíos a todo el país</h3>
-                    <p>
-                        Comprá online de manera fácil y recibí
-                        tus productos estés donde estés.
-                    </p>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Envíos a todo el país</h3>
+                        <p class="card-text">
+                            Comprá online de manera fácil y recibí
+                            tus productos estés donde estés.
+                        </p>
+                    </div>
                 </article>
 
                 <!-- Beneficio 3 -->
-                <article>
-                    <h3>Atención personalizada</h3>
-                    <p>
-                        Desde Río Cuarto, Córdoba, te ayudamos
-                        a encontrar el regalo ideal.
-                    </p>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Atención personalizada</h3>
+                        <p class="card-text">
+                            Desde Río Cuarto, Córdoba, te ayudamos
+                            a encontrar el regalo ideal.
+                        </p>
+                    </div>
                 </article>
 
             </div>
@@ -145,6 +205,11 @@
         </ul>
 
     </footer>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
